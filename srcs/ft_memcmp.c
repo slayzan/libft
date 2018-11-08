@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/08 16:30:17 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/08 16:46:35 by humarque         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	char	*sone;
+	char	*stwo;
+	size_t	i;
+
+	i = 0;
+	sone = (unsigned char)s1;
+	stwo = (unsigned char)s2;
+	while (sone[i] || stwo[i])
+	{
+		if (sone[i] != stwo[i])
+			return (sone[i] - stwo[i]);
+		i++;
+	}
+	return (0);
+}
