@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 16:58:34 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/08 16:59:34 by humarque         ###   ########.fr       */
+/*   Created: 2018/08/05 14:19:42 by humarque          #+#    #+#             */
+/*   Updated: 2018/08/05 14:22:50 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strcpy(char *dest, char *src)
 {

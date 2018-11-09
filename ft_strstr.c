@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 16:35:20 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/09 16:49:56 by humarque         ###   ########.fr       */
+/*   Created: 2018/08/05 14:25:25 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/09 16:56:59 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strstr(char *str, char *to_find)
 {
-	size_t i;
-	char *str;
+	int i;
+	int j;
 
-	str = (char *)s;
 	i = 0;
-	while(str[i])
-		i++;
-	while(i > 0)
+	j = 0;
+	if (to_find[i] == '\0')
+		return (str);
+	while (str[i])
 	{
-		if(str[i] == (unsigned char)c)
-			return (str + i);
-		i--;
+		j = 0;
+		while (to_find[j] == str[i + j])
+		{
+			if (to_find[j + 1] == '\0')
+				return (str + i);
+			j++;
+		}
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
-
