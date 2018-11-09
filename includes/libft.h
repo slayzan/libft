@@ -6,13 +6,14 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 12:32:25 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/08 17:05:47 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/09 16:43:19 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# define _GNU_SOURCE
 
 void		*ft_memset (void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
@@ -26,4 +27,7 @@ int  		ft_strlen(char *str);
 char		*ft_strcpy(char *dest, char *src);
 char		*ft_strncpy(char *dest, char *src, unsigned int n);
 char		*ft_strncat(char *dest, char *src, int nb);
+char 		*strchr(const char *s, int c);
+char		*strrchr(const char *s, int c);
+
 #endif
