@@ -14,8 +14,8 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*sone;
-	char	*stwo;
+	unsigned char	*sone;
+	unsigned char	*stwo;
 	size_t	i;
 
 	i = 0;

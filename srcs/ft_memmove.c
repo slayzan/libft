@@ -14,15 +14,15 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*dst;
-	char	*sc;
-	char	*temp;
-	size_t	i;
+	unsigned char	*dst;
+	unsigned char	*sc;
+	unsigned char	*temp;
+	size_t		i;
 
 	i = 0;
-	dst = (unsigned char)dest;
-	sc = (unsigned char)src;
-	if (!(temp = (char *)malloc(sizeof(char) * n + 1)))
+	dst = (unsigned char *)dest;
+	sc = (unsigned char *)src;
+	if (!(temp = (unsigned char *)malloc(sizeof(char) * n + 1)))
 		return (NULL);
 	while (i < n)
 	{

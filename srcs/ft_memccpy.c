@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*memccpy(void *dest, const void *src, int c, size_t n)
+void	*ft__memccpy(void *dest, const void *src, int c, size_t n)
 {
 	char	*dst;
 	char	*sc;
@@ -24,8 +24,8 @@ void	*memccpy(void *dest, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		dst[i] = sc[i];
-		if (dst[i] == (unsigned char)c)
-			return (dst + i);
+		if ((unsigned char)dst[i] == (unsigned char)c) // dst = char * mais c = unsigned conflit type
+			return (dst + i + 1);  // pointeur apres c
 		i++;
 	}
 	return (NULL);
