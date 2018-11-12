@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:23:26 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/09 14:52:56 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/12 17:01:02 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*dst;
 	unsigned char	*sc;
 	unsigned char	*temp;
-	size_t		i;
+	size_t			i;
 
 	i = 0;
 	dst = (unsigned char *)dest;

@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 16:30:17 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/09 14:48:38 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/12 17:15:01 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*sone;
-	unsigned char	*stwo;
-	size_t	i;
+	unsigned char		*sone;
+	unsigned char		*stwo;
+	size_t				i;
 
 	i = 0;
 	sone = (unsigned char *)s1;

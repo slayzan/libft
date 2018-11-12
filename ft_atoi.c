@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 22:46:31 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/09 17:06:32 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/12 17:43:43 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		result(char *str, int i)
+static int		result(char *str, int i)
 {
 	int resultat;
 
