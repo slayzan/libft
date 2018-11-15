@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 15:56:24 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/14 18:21:56 by humarque         ###   ########.fr       */
+/*   Created: 2018/11/14 18:36:52 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/14 18:41:15 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	size_t i;
 
 	i = 0;
-	while(s[i])
-		ft_putchar(s[i++]);
+	while (s[i])
+		ft_putchar_fd(s[i++], fd);
 }

@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 15:56:24 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/14 18:21:56 by humarque         ###   ########.fr       */
+/*   Created: 2018/11/14 18:22:31 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/14 18:24:02 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+
+void	ft_putendl(char const *s)
 {
 	size_t i;
 
 	i = 0;
 	while(s[i])
 		ft_putchar(s[i++]);
+	ft_putchar('\n');
 }
