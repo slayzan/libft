@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:03:39 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/15 12:29:45 by humarque         ###   ########.fr       */
+/*   Created: 2018/08/02 12:16:21 by humarque          #+#    #+#             */
+/*   Updated: 2018/08/02 12:27:12 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_putchar(char c);
+
+void	ft_putnbr(int nb)
 {
+	int neg;
 
-	int i;
-	int j;
-
-	j = 0;
-	i = 0;
-	while (dest[i])
+	neg = 0;
+	if (nb < 0)
 	{
-		i++;
+		ft_putchar('-');
+		if (nb == (-2147483648))
+		{
+			ft_putchar('2');
+			ft_putchar('1');
+			return (ft_putnbr(47483648));
+		}
+		nb = nb * -1;
 	}
-	while (src[j])
+	if (nb > 9)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		ft_putnbr(nb / 10);
 	}
-	dest[i] = '\0';
-	return (dest);
+	ft_putchar(nb % 10 + '0');
 }

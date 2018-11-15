@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:03:39 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/15 12:29:45 by humarque         ###   ########.fr       */
+/*   Created: 2018/08/05 14:25:25 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/15 12:26:42 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strnstr(char *str, char *to_find, size_t n)
 {
-
 	int i;
 	int j;
 
-	j = 0;
 	i = 0;
-	while (dest[i])
+	j = 0;
+	if (to_find[i] == '\0')
+		return (str);
+	while (str[i] && i < n)
 	{
+		j = 0;
+		while (to_find[j] == str[i + j])
+		{
+			if (to_find[j + 1] == '\0')
+				return (str + i);
+			j++;
+		}
 		i++;
 	}
-	while (src[j])
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
+}
+
+int main()
+{
+	printf("%s", ft_strnstr("Nous divisons deux variables du types", "div",2));
 }
