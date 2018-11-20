@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 16:12:03 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 16:20:23 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/20 17:36:37 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_count_words(char const *str, char c)
+int		ft_count_words(char const *str, char c)
 {
 	int i;
 	int resultat;
@@ -85,6 +85,14 @@ void    ft_print_words_tables(char **tab)
 	while (tab[i] != 0)
 	{
 		ft_putstr(tab[i]);
+		ft_putchar('\n');
 		i++;
 	}
+}
+
+
+int main()
+{
+	printf("%d",ft_count_words("      split       this for   me         ", ' '));
+	ft_print_words_tables(ft_strsplit("      split       this for   me  !       ", ' '));
 }
