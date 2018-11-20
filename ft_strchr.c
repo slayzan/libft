@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:31:18 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/12 17:03:57 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/20 11:56:14 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			return (str + i);
 		i++;
 	}
+	if ((unsigned char) c == '\0')
+		return (str + i);
 	return (NULL);
 }

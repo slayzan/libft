@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_whitespaces.c                             :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/08 20:58:06 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/14 15:53:31 by humarque         ###   ########.fr       */
+/*   Created: 2018/11/15 16:12:03 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/20 16:20:23 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_count_words(char *str, char c)
+static int		ft_count_words(char const *str, char c)
 {
 	int i;
 	int resultat;
@@ -33,7 +33,7 @@ static int		ft_count_words(char *str, char c)
 	return (resultat);
 }
 
-int		ft_len(char *str, int index , char c)
+int		ft_len(char const *str, int index , char c)
 {
 	int i;
 	int length;
@@ -48,7 +48,7 @@ int		ft_len(char *str, int index , char c)
 	return (length);
 }
 
-char	**ft_split_whitespaces(char *str, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	int		i;
 	int		k;
@@ -58,17 +58,17 @@ char	**ft_split_whitespaces(char *str, char c)
 	i = 0;
 	j = 0;
 	k = 0;
-	tab = malloc(sizeof(char *) * (ft_count_words(str,c) + 1));
+	tab = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (tab == NULL)
 		return (0);
-	while (j < ft_count_words(str,c))
+	while (j < ft_count_words(s ,c))
 	{
-		while (str[i] == c)
+		while (s[i] == c)
 			i++;
-		if (!(tab[j] = malloc(sizeof(char) * (ft_len(str, i, c) + 1))))
+		if (!(tab[j] = malloc(sizeof(char) * (ft_len(s, i, c) + 1))))
 			return (0);
-		while (str[i] != c && str[i])
-			tab[j][k++] = str[i++];
+		while (s[i] != c && s[i])
+			tab[j][k++] = s[i++];
 		tab[j][k] = '\0';
 		j++;
 		k = 0;
@@ -87,9 +87,4 @@ void    ft_print_words_tables(char **tab)
 		ft_putstr(tab[i]);
 		i++;
 	}
-}
-
-int main()
-{
-	ft_print_words_tables(ft_split_whitespaces("hello**world*les", '*'));
 }

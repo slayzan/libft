@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 17:03:39 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/15 12:29:45 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/20 16:05:40 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char const *src)
 {
 
 	int i;

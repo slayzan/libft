@@ -6,12 +6,12 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 16:01:49 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/15 14:57:03 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/15 15:36:28 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 void		ft_display_size(int size)
 {
 	printf(" size = %d", size);
@@ -64,4 +64,4 @@ char		*ft_itoa(int n)
 int main()
 {
 	printf("%s", ft_itoa(9369));
-}
+}*/

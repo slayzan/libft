@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 16:48:31 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/13 18:00:58 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/20 16:16:54 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strlencat(char const *s1, char const *s2)
+int	ft_strlencat(char const *s1, char const *s2)
 {
 	int i;
 	int resultat;
@@ -35,20 +35,34 @@ static int	ft_strlencat(char const *s1, char const *s2)
 
 char * ft_strjoin(char const *s1, char const *s2)
 {
-	char const *str;
+	char  *str;
 	size_t i;
+	size_t j;
 
 	i = 0;
+	j = 0;
 	if (!(str = malloc(sizeof(char) * (ft_strlencat(s1, s2) + 1))))
 		return (NULL);
-	str = ft_strcat((char *)s1,(char *)s2);
+	while(s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while(s2[j])
+	{
+		str[i] = s2[j];
+		j++;
+		i++;
+	}
+	str[i] = '\0';
 	return ((char *)str);
 }
 
-int main()
+/*int main()
 {
-	char s1[255] = "heelo ";
-	char s2[255] = "world";
-
-	printf("%s\n", ft_strjoin(s1,s2));
-}
+	char *s1 = "my favorite animal is";
+	char *s2 = " ";
+	char *s3 = "the nyancat";
+	char *res = ft_strjoin(s1, s3);
+	printf("%s",ft_strjoin(s1,s3));
+}*/

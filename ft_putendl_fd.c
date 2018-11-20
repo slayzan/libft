@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 18:39:57 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/14 18:42:15 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/15 15:34:53 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_putendl_fd(char const *s, int fd)
 	i = 0;
 	while (s[i])
 		ft_putchar_fd(s[i++], fd);
-	ft_putchar_fd('\n');
+	ft_putchar_fd('\n', fd);
 }

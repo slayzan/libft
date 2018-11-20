@@ -6,30 +6,30 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:24:47 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/14 14:05:19 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/20 16:48:00 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-static int	ft_findstart(char const *s)
+int	ft_findstart(char const *s)
 {
 	int i;
-	
+
 	i = 0;
 	while((s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t') && (s[i]))
 		i++;
 	return (i);
 }
 
-static int	ft_findend(char const *s)
+int	ft_findend(char const *s)
 {
 	int i;
-	int save;
 
 	i = 0;
 	while(s[i])
 		i++;
-	save = i;
+	i--;
 	while((s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t') && (i != 0))
 		i--;
 	return (i);
@@ -37,7 +37,7 @@ static int	ft_findend(char const *s)
 
 char	*ft_strtrim(char const *s)
 {
-	char const *str;
+	char		*str;
 	int			start;
 	int			end;
 	int			i;
@@ -45,16 +45,17 @@ char	*ft_strtrim(char const *s)
 
 	start = ft_findstart(s);
 	end = ft_findend(s);
+	len = ft_strlen(s);
 	i = 0;
+	if(start == len && end == 0)
+		start = end + 1;
 	while(s[i])
 		i++;
 	i = len;
-	if (start == 0 && end == len)
-		return (s);
-	if (!(str = malloc(sizeof(char) * ((end - start) + 1))))
+	if (!(str =(char *) malloc(sizeof(char) * ((end - start) + 2))))
 		return (NULL);
 	i = 0;
-	while(start < end)
+	while(start <= end)
 	{
 		str[i] = s[start];
 		i++;

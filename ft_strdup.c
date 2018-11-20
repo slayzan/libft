@@ -6,23 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 16:49:09 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/12 17:39:56 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/15 16:05:25 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
+char	*ft_strdup(char const *src)
 {
 	char	*dest;
 	int		i;

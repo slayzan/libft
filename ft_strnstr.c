@@ -6,15 +6,15 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 14:25:25 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/15 12:26:42 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/20 13:15:32 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <string.h>
 #include "libft.h"
 
 char	*ft_strnstr(char *str, char *to_find, size_t n)
 {
-	int i;
+	unsigned int i;
 	int j;
 
 	i = 0;
@@ -35,7 +35,13 @@ char	*ft_strnstr(char *str, char *to_find, size_t n)
 	return (0);
 }
 
-int main()
+/*int main()
 {
-	printf("%s", ft_strnstr("Nous divisons deux variables du types", "div",2));
-}
+	char *s1 = "MZIRIBMZIRIBMZE123";
+	char *s2 = "MZIRIBMZE";
+	size_t max = strlen(s2);
+	char *i1 = strnstr(s1, s2, max);
+	char *i2 = ft_strnstr(s1, s2, max);
+
+	printf("strnstr = %s et ft_strnstr = %s",i1,i2);
+}*/
