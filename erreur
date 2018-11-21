@@ -2,4 +2,3 @@ ft_memmove
 ft_strnstr
 ft_strcmp
 ft_atoi
-ft_strsplit : count word
