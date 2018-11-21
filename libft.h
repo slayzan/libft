@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 18:53:49 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 16:05:58 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/21 09:39:39 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ char		*ft_strcpy(char *dest, char *src);
 char		*ft_strcat(char *dest, char const *src);
 char		*ft_strstr(char *str, char *to_find);
 char		*ft_itoa(int n);
+char		*ft_strrev(char *str);
 char		**ft_strsplit(char const *s, char c);
 size_t		stlcat(char *dst, const char src, size_t size);
 #endif

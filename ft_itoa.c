@@ -6,30 +6,23 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 16:01:49 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/15 15:36:28 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/21 11:11:48 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-void		ft_display_size(int size)
-{
-	printf(" size = %d", size);
-}
 
-int		ft_countsize(int n, int neg)
+int		ft_countsize(int n)
 {
 	int size;
 	int save;
 	
 	save = n;
 	size = 0;
-	if(neg == 1)
-		save = save * -1;
 	while(save > 9)
 	{
-		save = save / 10;
 		size++;
+		save = save / 10;
 	}
 	return (size + 1);
 }
@@ -43,25 +36,29 @@ char		*ft_itoa(int n)
 	int		neg;
 
 	neg = 0;
+
+	if(n < -2147483647)
+		n = 0;
 	if ( n < 0)
+	{
 		neg = 1;
-	size = ft_countsize(n,neg);
+		n = n * -1;
+	}
+	size = ft_countsize(n);
 	if(!(value = malloc(sizeof(char) * ((size + neg) + 1))))
 		return (NULL);
-	if (neg == 1)
-		value[0] = '-';
-	i  = 1;	
-	while ()
+	i = 0;
+	while (n > 9)
 	{
-		printf("tt");
-		value[i] = (n % 10 - '0');
-		n = n / 10;
+		value[i] = (n % 10 + '0');
 		i++;
+		n = n / 10;
 	}
-	return (value);
+	value[i] = n + '0';
+	i++;
+	if(neg == 1)
+		value[i] = '-';
+	i++;
+	value[i] = '\0';
+	return (ft_strrev(value));
 }
-
-int main()
-{
-	printf("%s", ft_itoa(9369));
-}*/

@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 16:12:03 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 17:36:37 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/21 08:51:50 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,10 @@ int		ft_count_words(char const *str, char c)
 	resultat = 0;
 	while (str[i])
 	{
-		while((str[i] != c) && (str[i] != '\0'))
+		while((str[i] != c))
 			i++;
-		if(((str[i] == c) && (str[i - 1] != c)) || (str[i + 1] == '\0' && str[i] != c))
-		{
+		if(((str[i] == c) && (str[i - 1] != c) && (i != 0))	|| (str[i + 1] == '\0' && str[i] != c))
 			resultat++;
-		}
 		while(str[i] ==	c)
 			i++;
 	}
@@ -88,11 +86,4 @@ void    ft_print_words_tables(char **tab)
 		ft_putchar('\n');
 		i++;
 	}
-}
-
-
-int main()
-{
-	printf("%d",ft_count_words("      split       this for   me         ", ' '));
-	ft_print_words_tables(ft_strsplit("      split       this for   me  !       ", ' '));
 }

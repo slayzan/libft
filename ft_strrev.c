@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 15:23:26 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 18:04:31 by humarque         ###   ########.fr       */
+/*   Created: 2018/08/02 18:58:02 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/21 09:39:10 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strrev(char *str)
 {
-	unsigned char	*dst;
-	unsigned char	*sc;
-	unsigned char	*temp;
-	size_t			i;
+	int i;
+	int j;
+	int temp;
 
+	temp = 0;
 	i = 0;
-	dst = (unsigned char *)dest;
-	sc = (unsigned char *)src;
-	temp = NULL;
-
-	if(sc < dst)
-	
-	while (i < n)
+	j = 0;
+	while (str[j])
 	{
-		temp[i] = sc[i];
-		i++;
+		j++;
 	}
-	i = 0;
-	while (i < n)
+	j--;
+	while (i < j)
 	{
-		dst[i] = temp[i];
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
 		i++;
+		j--;
 	}
-	return (dst);
+	return (str);
 }
