@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 14:25:25 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 13:15:32 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/23 17:22:50 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <string.h>
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
 	unsigned int i;
 	int j;
@@ -20,14 +20,14 @@ char	*ft_strnstr(char *str, char *to_find, size_t n)
 	i = 0;
 	j = 0;
 	if (to_find[i] == '\0')
-		return (str);
+		return ((char *)str);
 	while (str[i] && i < n)
 	{
 		j = 0;
-		while (to_find[j] == str[i + j])
+		while (to_find[j] == str[i + j] && j + i < n)
 		{
 			if (to_find[j + 1] == '\0')
-				return (str + i);
+				return ((char *)str + i);
 			j++;
 		}
 		i++;

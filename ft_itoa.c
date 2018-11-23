@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 16:01:49 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/21 11:11:48 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/23 17:14:54 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_countsize(int n)
 {
 	int size;
 	int save;
-	
+
 	save = n;
 	size = 0;
 	while(save > 9)
@@ -36,9 +36,6 @@ char		*ft_itoa(int n)
 	int		neg;
 
 	neg = 0;
-
-	if(n < -2147483647)
-		n = 0;
 	if ( n < 0)
 	{
 		neg = 1;
@@ -62,3 +59,12 @@ char		*ft_itoa(int n)
 	value[i] = '\0';
 	return (ft_strrev(value));
 }
+
+
+/*int main()
+{
+	char n[40] = "99999999999999999999999999";
+	int i1 = atoi(n);
+	int i2 = ft_atoi(n);
+	printf("%d", i2); 
+}*/

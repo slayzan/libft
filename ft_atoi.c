@@ -6,15 +6,15 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 22:46:31 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 14:21:38 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/23 16:42:41 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long int		result(char *str, int i)
+ int		result(char *str, int i)
 {
-	long int resultat;
+	 int resultat;
 
 	resultat = 0;
 	while (str[i] >= '0' && str[i] <= '9')
@@ -22,12 +22,10 @@ static long int		result(char *str, int i)
 		resultat = 10 * resultat + (str[i] - '0');
 		i++;
 	}
-	if (resultat > 2147483647  || resultat < -2147483648)
-		return (0);
 	return (resultat);
 }
 
-long int		ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
 	long int i;
 	int neg;
@@ -53,6 +51,7 @@ long int		ft_atoi(char *str)
 	resultat = result(str, i);
 	return (resultat * neg);
 }
+
 /*int main()
 {
 	char n[60] = "11111111111111111111111111111111111111111111";

@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 15:09:05 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/21 11:38:33 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/23 15:32:41 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int		ft_strcmp(char const *s1, char  const *s2)
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
