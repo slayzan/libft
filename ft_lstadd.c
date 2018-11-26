@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/26 14:44:21 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/26 15:34:46 by humarque         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void ft_lstadd(t_list **alst, t_list *new)
@@ -5,6 +17,6 @@ void ft_lstadd(t_list **alst, t_list *new)
 	if(alst && new)
 	{
 		new->next = *alst;
-		*alst = next;
+		*alst = new;
 	}	
 }

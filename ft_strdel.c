@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:15:01 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/15 15:59:52 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/26 16:32:38 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if(as)
+		ft_memdel((void **)as);
 }

@@ -6,15 +6,15 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 22:46:31 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/23 16:42:41 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/26 15:37:35 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- int		result(char *str, int i)
+static int		result(char *str, int i)
 {
-	 int resultat;
+	int resultat;
 
 	resultat = 0;
 	while (str[i] >= '0' && str[i] <= '9')
@@ -53,9 +53,9 @@ int		ft_atoi(char *str)
 }
 
 /*int main()
-{
-	char n[60] = "11111111111111111111111111111111111111111111";
-	int i1 = atoi(n);
-	int i2 = ft_atoi(n);
-	printf("atoi = %d ft_atoi = %d", i1,i2);
-}*/
+  {
+  char n[60] = "dsds111111111111111111111111111111111111";
+  int i1 = atoi(n);
+  int i2 = ft_atoi(n);
+  printf("atoi = %d ft_atoi = %d", i1,i2);
+  }*/

@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 16:12:03 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/21 08:51:50 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/26 16:50:09 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_words(char const *str, char c)
+static int		ft_count_words(char const *str, char c)
 {
 	int i;
 	int resultat;
@@ -31,7 +31,7 @@ int		ft_count_words(char const *str, char c)
 	return (resultat);
 }
 
-int		ft_len(char const *str, int index , char c)
+static int		ft_len(char const *str, int index , char c)
 {
 	int i;
 	int length;
@@ -56,23 +56,27 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	k = 0;
-	tab = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (tab == NULL)
-		return (0);
-	while (j < ft_count_words(s ,c))
+	if (s && c)
 	{
-		while (s[i] == c)
-			i++;
-		if (!(tab[j] = malloc(sizeof(char) * (ft_len(s, i, c) + 1))))
+		tab = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+		if (tab == NULL)
 			return (0);
-		while (s[i] != c && s[i])
-			tab[j][k++] = s[i++];
-		tab[j][k] = '\0';
-		j++;
-		k = 0;
+		while (j < ft_count_words(s ,c))
+		{
+			while (s[i] == c)
+				i++;
+			if (!(tab[j] = malloc(sizeof(char) * (ft_len(s, i, c) + 1))))
+				return (0);
+			while (s[i] != c && s[i])
+				tab[j][k++] = s[i++];
+			tab[j][k] = '\0';
+			j++;
+			k = 0;
+		}
+		tab[j] = 0;
+		return (tab);
 	}
-	tab[j] = 0;
-	return (tab);
+	return (NULL);
 }
 
 void    ft_print_words_tables(char **tab)

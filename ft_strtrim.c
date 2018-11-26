@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:24:47 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 16:48:00 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/26 17:28:29 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_findstart(char const *s)
+static int	ft_findstart(char const *s)
 {
 	int i;
 
@@ -22,7 +22,7 @@ int	ft_findstart(char const *s)
 	return (i);
 }
 
-int	ft_findend(char const *s)
+static int	ft_findend(char const *s)
 {
 	int i;
 
@@ -43,24 +43,28 @@ char	*ft_strtrim(char const *s)
 	int			i;
 	int			len;
 
-	start = ft_findstart(s);
-	end = ft_findend(s);
-	len = ft_strlen(s);
-	i = 0;
-	if(start == len && end == 0)
-		start = end + 1;
-	while(s[i])
-		i++;
-	i = len;
-	if (!(str =(char *) malloc(sizeof(char) * ((end - start) + 2))))
-		return (NULL);
-	i = 0;
-	while(start <= end)
+	if(s)
 	{
-		str[i] = s[start];
-		i++;
-		start++;
+		start = ft_findstart(s);
+		end = ft_findend(s);
+		len = ft_strlen(s);
+		i = 0;
+		if(start == len && end == 0)
+			start = end + 1;
+		while(s[i])
+			i++;
+		i = len;
+		if (!(str =(char *) malloc(sizeof(char) * ((end - start) + 2))))
+			return (NULL);
+		i = 0;
+		while(start <= end)
+		{
+			str[i] = s[start];
+			i++;
+			start++;
+		}
+		str[i] = '\0';
+		return (str);
 	}
-	str[i] = '\0';
-	return (str);
+	return (NULL);
 }

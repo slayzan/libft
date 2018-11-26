@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 16:01:49 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/23 17:14:54 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/26 17:53:07 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_countsize(int n)
+#include <stdlib.h>
+static int		ft_countsize(int n)
 {
 	int size;
 	int save;
@@ -34,24 +34,29 @@ char		*ft_itoa(int n)
 	size_t	i;
 	int		size;
 	int		neg;
+	unsigned int nb;
 
 	neg = 0;
-	if ( n < 0)
+	if (n < 0)
 	{
 		neg = 1;
-		n = n * -1;
+		nb = n * -1;
 	}
-	size = ft_countsize(n);
+	else
+		nb = n;
+	//printf("%d\n %d\n", n,neg);
+	//printf("%d", ft_countsize((n)));
+	size = ft_countsize(nb);
 	if(!(value = malloc(sizeof(char) * ((size + neg) + 1))))
 		return (NULL);
 	i = 0;
-	while (n > 9)
+	while (nb > 9)
 	{
-		value[i] = (n % 10 + '0');
+		value[i] = (nb % 10 + '0');
 		i++;
-		n = n / 10;
+		nb = nb / 10;
 	}
-	value[i] = n + '0';
+	value[i] = nb + '0';
 	i++;
 	if(neg == 1)
 		value[i] = '-';
@@ -63,8 +68,6 @@ char		*ft_itoa(int n)
 
 /*int main()
 {
-	char n[40] = "99999999999999999999999999";
-	int i1 = atoi(n);
-	int i2 = ft_atoi(n);
-	printf("%d", i2); 
+	printf("%s",ft_itoa((-2147483647 -1)));
+	printf("%d", itoa((-2147483647 -1)));
 }*/

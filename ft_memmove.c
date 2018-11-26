@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 15:23:26 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/23 15:59:26 by humarque         ###   ########.fr       */
+/*   Created: 2018/11/26 15:05:51 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/26 17:51:58 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,14 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*dst;
-	unsigned char	*sc;
-	size_t		i;
-
-	i = 0;
-	dst = (unsigned char *)dest;
-	sc = (unsigned char *)src;
-	if (dst > sc)
-		ft_memcpy(dst,sc,n);
-	else
+	if (!dest && !src)
+		return (NULL);
+	if (dest <= src)
+		return (ft_memcpy(dest, src, n));
+	while (n > 0)
 	{
-		while (i < n)
-		{
-			*dst = *sc;
-			dst++;
-			sc++;
-			i++;
-		}
+		n--;
+		((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
 	}
-	return (dst);
+	return ((unsigned char *)dest);
 }
