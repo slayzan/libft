@@ -6,15 +6,15 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:35:20 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/26 16:32:02 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/28 18:40:16 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	*str;
 
 	str = (char *)s;

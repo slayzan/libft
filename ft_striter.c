@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:15:49 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/26 16:42:30 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/28 18:29:32 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striter(char *s, void (*f)(char *))
 	size_t i;
 
 	i = 0;
-	if(s && f)
+	if (s && f)
 	{
 		while (s[i])
 		{

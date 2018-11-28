@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 22:46:31 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/26 15:37:35 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/28 18:13:16 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ static int		result(char *str, int i)
 	return (resultat);
 }
 
-int		ft_atoi(char *str)
+int				ft_atoi(char *str)
 {
-	long int i;
-	int neg;
-	long int resultat;
+	int		i;
+	int		neg;
+	int		resultat;
 
 	i = 0;
 	neg = 1;
@@ -51,11 +51,3 @@ int		ft_atoi(char *str)
 	resultat = result(str, i);
 	return (resultat * neg);
 }
-
-/*int main()
-  {
-  char n[60] = "dsds111111111111111111111111111111111111";
-  int i1 = atoi(n);
-  int i2 = ft_atoi(n);
-  printf("atoi = %d ft_atoi = %d", i1,i2);
-  }*/

@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:16:01 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/26 16:43:27 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/28 18:30:45 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int i;
 
 	i = 0;
-	if(s && f)
+	if (s && f)
 	{
 		while (s[i])
 		{

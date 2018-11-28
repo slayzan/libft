@@ -6,13 +6,11 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 12:16:21 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 14:10:25 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/27 17:52:05 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
+#include "libft.h"
 
 void	ft_putnbr(int nb)
 {

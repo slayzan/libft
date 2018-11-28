@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 17:03:39 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/20 16:05:40 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/28 18:26:05 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strcat(char *dest, char const *src)
 {
-
 	int i;
 	int j;
 

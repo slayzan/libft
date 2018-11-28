@@ -6,10 +6,9 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 16:12:03 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/26 16:50:09 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/28 16:24:27 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 static int		ft_count_words(char const *str, char c)
@@ -21,9 +20,10 @@ static int		ft_count_words(char const *str, char c)
 	resultat = 0;
 	while (str[i])
 	{
-		while((str[i] != c))
+		while((str[i] != c && str[i]))
 			i++;
-		if(((str[i] == c) && (str[i - 1] != c) && (i != 0))	|| (str[i + 1] == '\0' && str[i] != c))
+		if(((str[i] == c) && (str[i - 1] != c) && (i != 0))	|| (str[i + 1] == '\0' && str[i] != c) || 
+				(str[i] == '\0' && str[i -1] != c ))
 			resultat++;
 		while(str[i] ==	c)
 			i++;
@@ -38,7 +38,7 @@ static int		ft_len(char const *str, int index , char c)
 
 	i = index;
 	length = 0;
-	while (str[i] != '\0' && str[i] != c)
+	while (str[i] && str[i] != c)
 	{
 		length++;
 		i++;
@@ -76,18 +76,5 @@ char	**ft_strsplit(char const *s, char c)
 		tab[j] = 0;
 		return (tab);
 	}
-	return (NULL);
-}
-
-void    ft_print_words_tables(char **tab)
-{
-	int i;
-
-	i = 0;
-	while (tab[i] != 0)
-	{
-		ft_putstr(tab[i]);
-		ft_putchar('\n');
-		i++;
-	}
+	return (NULL);	
 }

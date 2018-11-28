@@ -6,36 +6,53 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:24:47 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/26 17:28:29 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/28 19:21:15 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_findstart(char const *s)
+static int		ft_findstart(char const *s)
 {
 	int i;
 
 	i = 0;
-	while((s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t') && (s[i]))
+	while ((s[i] == ' ' || s[i] == ','
+				|| s[i] == '\n' || s[i] == '\t') && (s[i]))
 		i++;
 	return (i);
 }
 
-static int	ft_findend(char const *s)
+static int		ft_findend(char const *s)
 {
 	int i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 		i++;
 	i--;
-	while((s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t') && (i != 0))
+	while ((s[i] == ' ' || s[i] == ','
+				|| s[i] == '\n' || s[i] == '\t') && (i != 0))
 		i--;
 	return (i);
 }
 
-char	*ft_strtrim(char const *s)
+char	*ft_strbuild(char *s ,int start, int end)
+{
+	int i;
+
+	i = 0;
+	while (start <= end)
+	{
+		str[i] = s[start];
+		i++;
+		start++;
+	}
+	str[i] = '\0';
+	return (str);
+
+}
+char			*ft_strtrim(char const *s)
 {
 	char		*str;
 	int			start;
@@ -43,21 +60,21 @@ char	*ft_strtrim(char const *s)
 	int			i;
 	int			len;
 
-	if(s)
+	if (s)
 	{
 		start = ft_findstart(s);
 		end = ft_findend(s);
 		len = ft_strlen(s);
 		i = 0;
-		if(start == len && end == 0)
+		if (start == len && end == 0)
 			start = end + 1;
-		while(s[i])
+		while (s[i])
 			i++;
 		i = len;
-		if (!(str =(char *) malloc(sizeof(char) * ((end - start) + 2))))
+		if (!(str = (char *)malloc(sizeof(char) * ((end - start) + 2))))
 			return (NULL);
 		i = 0;
-		while(start <= end)
+		while (start <= end)
 		{
 			str[i] = s[start];
 			i++;
