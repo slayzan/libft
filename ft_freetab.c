@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_freetab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 16:41:34 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/08 16:48:33 by humarque         ###   ########.fr       */
+/*   Created: 2018/11/30 17:18:45 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/30 17:20:00 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen(char *str)
+void	ft_freetab(void **tab)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	while (tab[i] != 0)
+		free(tab[i++]);
+	free(tab);
 }

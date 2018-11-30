@@ -6,13 +6,13 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 13:24:47 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/28 19:31:57 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/29 14:47:25 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_findstart(char const *s)
+static int			ft_findstart(char const *s)
 {
 	int i;
 
@@ -23,7 +23,7 @@ static int		ft_findstart(char const *s)
 	return (i);
 }
 
-static int		ft_findend(char const *s)
+static int			ft_findend(char const *s)
 {
 	int i;
 
@@ -37,13 +37,13 @@ static int		ft_findend(char const *s)
 	return (i);
 }
 
-char	*ft_strbuild(char const *s ,int start, int end)
+static char			*ft_strbuild(char const *s, int start, int end)
 {
-	int i;
-	char *s1;
+	int		i;
+	char	*s1;
 
 	i = 0;
-	if(!(s1 = (char *)malloc(sizeof(char) * ((end - start) + 2))))
+	if (!(s1 = (char *)malloc(sizeof(char) * ((end - start) + 2))))
 		return (NULL);
 	while (start <= end)
 	{
@@ -53,10 +53,9 @@ char	*ft_strbuild(char const *s ,int start, int end)
 	}
 	s1[i] = '\0';
 	return (s1);
-
 }
 
-char			*ft_strtrim(char const *s)
+char				*ft_strtrim(char const *s)
 {
 	char		*str;
 	int			start;
