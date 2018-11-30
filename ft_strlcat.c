@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:28:08 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/30 17:35:18 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/30 18:11:22 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 	j = 0;
 	if (size >= lendst)
 	{
-		while (dst[i] && i < (size - 1))
+		while (dst[i] && i < size)
 		{
 			i++;
 		}
