@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 18:53:49 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/30 21:05:42 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/30 21:24:18 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int					ft_tolower(int c);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strncmp(const char *s1, const char *s2, unsigned int n);
-char				*ft_strcpy(char *dest, char *src);
-char				*ft_strncpy(char *dest, char *src, unsigned int n);
+char				*ft_strcpy(char *dest, char const *src);
+char				*ft_strncpy(char *dest, char const *src, unsigned int n);
 char				*ft_strncat(char *dest, const char *src, size_t nb);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
@@ -78,10 +78,8 @@ char				*ft_strnew(size_t size);
 char				*ft_strtrim(char const *s);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char				*ft_strstr(char *str, char *to_find);
-char				*ft_strcpy(char *dest, char *src);
+char				*ft_strstr(char const *str, char const *to_find);
 char				*ft_strcat(char *dest, char const *src);
-char				*ft_strstr(char *str, char *to_find);
 char				*ft_itoa(int n);
 char				*ft_strrev(char *str);
 char				**ft_strsplit(char const *s, char c);

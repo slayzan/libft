@@ -6,11 +6,11 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 14:23:08 by humarque          #+#    #+#             */
-/*   Updated: 2018/08/07 15:31:45 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/30 21:24:47 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char const *src, unsigned int n)
 {
 	unsigned int i;
 
