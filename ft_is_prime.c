@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetab.c                                       :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 17:18:45 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/30 21:03:38 by humarque         ###   ########.fr       */
+/*   Created: 2018/08/04 20:11:56 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/30 21:05:37 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_freetab(void **tab)
+int		ft_is_prime(int nb)
 {
 	int i;
 
-	i = 0;
-	while (tab[i] != 0)
-		free(tab[i++]);
-	free(tab);
+	i = 3;
+	if (nb < 2)
+		return (0);
+	if (nb == 1)
+		return (1);
+	if (nb > 2147483647)
+		return (0);
+	if (nb == 2147483647)
+		return (1);
+	while (i < nb)
+	{
+		if (nb % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetab.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 17:18:45 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/30 21:03:38 by humarque         ###   ########.fr       */
+/*   Created: 2018/08/04 18:16:21 by humarque          #+#    #+#             */
+/*   Updated: 2018/11/30 21:02:22 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_freetab(void **tab)
+int		ft_sqrt(int nb)
 {
 	int i;
 
-	i = 0;
-	while (tab[i] != 0)
-		free(tab[i++]);
-	free(tab);
+	i = 1;
+	if (nb == 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	while (i * i < nb)
+	{
+		i++;
+	}
+	if (i * i == nb)
+		return (i);
+	return (0);
 }

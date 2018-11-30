@@ -6,7 +6,7 @@
 /*   By: humarque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 18:53:49 by humarque          #+#    #+#             */
-/*   Updated: 2018/11/30 17:42:12 by humarque         ###   ########.fr       */
+/*   Updated: 2018/11/30 21:05:42 by humarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+int					ft_find_next_prime(int nb);
+int					ft_is_prime(int nb);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
-size_t				ft_strlen(char const *str);
 int					ft_atoi(char *str);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_isalpha(int c);
@@ -84,6 +85,7 @@ char				*ft_strstr(char *str, char *to_find);
 char				*ft_itoa(int n);
 char				*ft_strrev(char *str);
 char				**ft_strsplit(char const *s, char c);
+size_t				ft_strlen(char const *str);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
